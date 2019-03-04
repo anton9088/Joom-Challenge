@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <data>
+        <!-- Сейчас не используется, т.к. нет кастомной логики, оставлю здесь на будущее -->
+        <variable
+            name="viewModel"
+            type="com.joom.challenge.ui.gallery.GalleryViewModel" />
+    </data>
+
+    <com.joom.challenge.ui.views.LceStateLayout
+        android:id="@+id/lceLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Почему здесь такие странные отступы см. в StaggeredSpacingItemDecoration -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:paddingTop="@{@dimen/gallery_spacing / 2}"
+                android:paddingBottom="@{@dimen/gallery_spacing / 2}"
+                android:paddingLeft="@{@dimen/gallery_spacing}"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </com.joom.challenge.ui.views.LceStateLayout>
+
+</layout>

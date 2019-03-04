@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Joom Challenge</string>
+    <string name="image">Image</string>
+    <string name="unknownError">Неизвестная ошибка</string>
+    <string name="ioError">Ошибка загрузки данных</string>
+    <string name="serverError">Ошибка: %1$d</string>
+    <string name="parseError">Неверный формат данных</string>
+    <string name="noItemsError">Здесь пусто, попробуйте обновить позже</string>
+    <string name="retry">Обновить</string>
+    <string name="loadMore">Загрузить еще</string>
+</resources>

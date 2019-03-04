@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="com.joom.challenge.pagination.PaginationAdapter.LoadMoreState" />
+
+        <variable
+            name="loadMoreState"
+            type="com.joom.challenge.pagination.PaginationAdapter.LoadMoreState" />
+
+        <variable
+            name="loadMoreHandler"
+            type="com.joom.challenge.pagination.PaginationAdapter.LoadMoreHandler" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+        <ProgressBar
+            android:id="@+id/loadMoreProgress"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:id="@+id/loadMoreTxt"
+            android:background="@color/galleryBackgroundColor"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:visibility="@{loadMoreState != LoadMoreState.PROGRESS ? View.VISIBLE : View.INVISIBLE}"
+            android:onClick="@{loadMoreHandler::onLoadMoreClicked}"
+            android:text="@string/loadMore"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+</layout>
